@@ -47,6 +47,8 @@ import timber.log.Timber;
 public class DetailFragment extends BaseFragment implements DetailView {
 
 
+    public static String DATA = "data";
+
     @Bind(R.id.iv_poster)
     ImageView ivPoster;
     @Bind(R.id.tv_releasedate)
@@ -79,11 +81,6 @@ public class DetailFragment extends BaseFragment implements DetailView {
 
     }
 
-    @SuppressLint("ValidFragment")
-    public DetailFragment(Movie movie) {
-        this.movie = movie;
-    }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -114,7 +111,11 @@ public class DetailFragment extends BaseFragment implements DetailView {
     }
 
     public static DetailFragment newInstance(Movie movie) {
-        DetailFragment fragment = new DetailFragment(movie);
+        DetailFragment fragment = new DetailFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(DATA, movie);
+        fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -141,6 +142,7 @@ public class DetailFragment extends BaseFragment implements DetailView {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
 
+        movie = (Movie) getArguments().getSerializable(DATA);
         StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(gridLayoutManager);
 
