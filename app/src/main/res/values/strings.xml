@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movie Project</string>
+    <string name="label_retry">RETRY</string>
+    <string name="sort">Sort</string>
+    <string name="sort_most_popular">Most popular</string>
+    <string name="sort_highest_rated">Highest rated</string>
+    <string name="add_favorite">Add to favorite</string>
+    <string name="del_favorite">Remove from favorite</string>
+</resources>

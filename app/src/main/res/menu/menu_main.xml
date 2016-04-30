@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu1"
+        app:showAsAction="always"
+        android:icon="@drawable/star"
+        android:title="favorite">
+        </item>
+    <item
+        android:id="@+id/menu2"
+        app:showAsAction="always"
+        android:icon="@drawable/sort"
+        android:title="sort">
+        <menu>
+            <group
+                android:id="@+id/group2"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/submenu1"
+                    android:title="By Release Date" />
+                <item
+                    android:id="@+id/submenu2"
+                    android:title="BY Highest Rate" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
